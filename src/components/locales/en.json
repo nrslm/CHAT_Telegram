@@ -1,0 +1,18 @@
+{
+  "form_window": "Entrance",
+  "language": "Language",
+  "phone_number": "Phone number",
+  "verification_code": "Verification code",
+  "full_name": "Full name",
+  "send_sms": "Send sms",
+  "sign_in": "Sign in",
+  "sign_up": "Sign up",
+  "full_name_profil": "full_name: ",
+  "Phone_number_profil": "Phone number: ",
+  "Last_activity": "Last activity: ",
+  "input_value": "to write a message...",
+  "btn_chat_message":"Send",
+  "setting_profil": "setting",
+  "setFullName": "Edit full name",
+  "btn_send":"send"
+}

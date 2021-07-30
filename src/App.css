@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Andika&family=Qahiri&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,100;1,400;1,500;1,700&display=swap');
+.body {
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+}
+.block_all_form{
+  background-image: url('https://images.unsplash.com/photo-1531265726475-52ad60219627?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1368&q=80');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+}
+.block_form{
+  background-color: rgba(139, 136, 136, 0.842) !important;
+  color: azure;
+  text-shadow: 0px 0px 4px black;
+}
+
+/*  */
+.btn_form{
+  background-color: gold !important;
+  border: none !important;
+  text-shadow: 0px 0px 4px white;
+  color: rgb(41, 38, 38) !important;
+}
+.block{
+  max-width: 400px;
+}
+.block_language{
+  width: 100px;
+  position: absolute;
+  right: 1%;
+  top: 1%;
+}
+.drop_form{
+  cursor: pointer;
+  background-color: gold !important;
+  border: none !important;
+}
+.block_form_inputs{
+  width: 400px;
+  text-align: center;
+  border-radius: 10px;
+  background-color: rgba(128, 128, 128, 0.733);
+  padding: 30px;
+  color: white;
+  text-shadow: 0px 0px 4px black;
+}
+
+/* Home */
+.block_all_home{
+  display: flex;
+}
+.block_left_home{
+  /* position: fixed; */
+  width: 25%;
+  min-height: 100vh;
+  background-color: rgb(50, 50, 51);
+  border: 1px solid rgb(182, 181, 184);
+  color: white;
+  padding: 0px 40px 10px 40px;
+}
+.block_rigth_home{
+  width: 100%;
+  /* position: fixed; */
+  height: 100vh;
+
+}
+.heder_home{
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  height: 10vh;
+  background-color: rgb(221,220,224);
+  border: 1px solid rgb(204, 203, 206);
+  color: white;
+  text-shadow: 0px 0px 4px black;
+}
+.block_chat{
+  width: 100%;
+  height: 80%;
+  background-image: url('https://neuronacreativa.com/cattleya/app-assets/images/backgrounds/chat-bg-2.png');
+  background-position: center;
+}
+.block_input_chat{
+  width: 100%;
+  height: 10%;
+  background-color: rgb(221,220,224);
+  border: 1px solid rgb(186, 185, 187);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+.input_chat{
+  border: none;
+  outline: none;
+  background-color: rgb(221,220,224);
+  width: 89%;
+  color: black;
+  font-size: 20px;
+}
+
+.profil_img{
+  width: 250px;
+  height: 200px;
+  border-bottom-left-radius : 50%;
+  border-bottom-right-radius : 50%;
+  background-image: url('https://cdn.europosters.eu/image/750/plastic-frame-billie-eilish-spider-i85000.jpg');
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 2px solid gold;
+}
+.card_user{
+  color: white !important;
+  /* background-color: rgba(0, 0, 0, 0.274) ; */
+}
+.hr{
+  border: 1px solid rgb(236, 234, 234);
+  color: black;
+}
+
+.btn_setting{
+  /* background-color: rgb(251,251,253) !important; */
+  color: white !important;
+  text-shadow: 0px 0px 4px black;
+}
+.btn_send{
+  /* color: black !important; */
+  text-shadow: 0px 0px 2px black;
+}
+.span_chat{
+  font-size: 20px;
+  padding: 10px 15px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: rgb(50,50,51);
+  color: white;
+  letter-spacing: 1px;
+}
+.span_chat_enimi{
+  border-top-right-radius: 20px;
+  border-top-left-radius: 0px;
+}
+.text_chat{
+  overflow-y: scroll;
+  padding: 20px;
+  height: 100%;
+}
+.text_massage{
+}
+.modalHead{
+  display: flex;
+  justify-content: end;
+}
+.modalBlock{
+  background-color: rgb(50,50,51) !important;
+
+}
+
+.block_btn_chat{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.profil_enimi{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: black;
+  background-position: center;
+  background-size: cover;
+  margin: 5px;
+  /* margin: 4px ; */
+}

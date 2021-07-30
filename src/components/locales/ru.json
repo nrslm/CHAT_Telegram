@@ -1,0 +1,18 @@
+{
+  "form_window": "Вход",
+  "language": "Язык сайта",
+  "phone_number": "Телефон номер",
+  "verification_code": "Код подтверждения",
+  "full_name": "Имя",
+  "send_sms": "Отправить код",
+  "sign_in": "Вход",
+  "sign_up": "Зарегистрироваться",
+  "full_name_profil": "Имя:",
+  "Phone_number_profil": "Номер телефона:",
+  "Last_activity": "Последная активность:",
+  "input_value": "написать сообщение...",
+  "btn_chat_message":"Отправить",
+  "setting_profil": "Настройка",
+  "setFullName": "Изменить полное имя",
+  "btn_send":"отправить"
+}
