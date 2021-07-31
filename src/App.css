@@ -130,7 +130,7 @@
   text-shadow: 0px 0px 2px black;
 }
 .span_chat{
-  font-size: 20px;
+  font-size: 16px;
   padding: 10px 15px;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
@@ -148,7 +148,8 @@
   padding: 20px;
   height: 100%;
 }
-.text_massage{
+.title_chat{
+  cursor: pointer;
 }
 .modalHead{
   display: flex;
@@ -173,5 +174,6 @@
   background-position: center;
   background-size: cover;
   margin: 5px;
+  margin-top: 20px !important;
   /* margin: 4px ; */
 }

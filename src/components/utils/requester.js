@@ -35,13 +35,12 @@ import axios from "axios"
           Authorization: 'Bearer ' + get
         } ,
       }).then((response) => {
-        resolve(response)
+        resolve(response);
       }).catch((e) => {
         console.log(e);
         alert(e.message);
-        reject(e)
+        reject(e);
       })
     })
   }
-
 }

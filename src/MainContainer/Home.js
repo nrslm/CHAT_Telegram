@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import {
     Form,
     Button,
@@ -11,16 +11,15 @@ import { UserContext, LanguageContext } from './../components/contexts';
 import { useTranslation } from 'react-i18next';
 import requester from '../components/utils/requester';
 
-
 const Home = (v) => {
     const { t } = useTranslation();
     const [language, setLanguage] = useContext(LanguageContext);
     const [show, setShow] = useState(false);
+    const [show2, setShow2] = useState(false);
     const [imgInput, setImgInput] = useState(false);
     const [nameInput, setNameInput] = useState(false);
     const [inpChatValue, setInpChatValue] = useState('');
-
-
+    const [dataMessage, setDataMessage] = useState([]);
 
 
     const [user, setUser] = useContext(UserContext);
@@ -28,29 +27,59 @@ const Home = (v) => {
     const [inputChat_text, setInputChat_text] = useState('');
 
 
+
+    useEffect(() => {
+        requester.get('/message')
+            .then(({ data }) => {
+                alert('data');
+                // setDataMessage(data.payload);
+                console.log(data.payload);  
+            }).catch(e => {
+                console.log(e);
+                alert('err');
+            }).finally(() => {
+                alert('final');
+            });
+    }, []);
+
     const inputChatValue = (v) => {
         setInpChatValue(v);
     }
 
     const keyInp = (v) => {
-        // console.log(v);
         if (v.keyCode === 13) {
-            setInputChat_text(inpChatValue);
+            // setInputChat_text(inpChatValue);
+
+            requester.post('/message', {
+                text: inpChatValue,
+            }).then(({ data }) => {
+                console.log(data);
+            }).finally(() => {
+            })
         }
     }
     const btn_chat_sand = () => {
-        setInputChat_text(inpChatValue);
-        console.log(inputChat_text);
+        // setInputChat_text(inpChatValue);
+
+        requester.post('/message', {
+            text: inpChatValue,
+        }).then(({ data }) => {
+            console.log(data);
+        }).finally(() => {
+        })
     }
 
-
-
+    // text post server:
+    // modal1
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    // modal2
+    const handleClose2 = () => setShow2(false);
+    const handleShow2 = () => setShow2(true);
 
-    const btn = () => {
-        setUser(null)
-    }
+    // const btn = () => {
+    //     setUser(null)
+    // }
 
     const inputImg = (v) => {
         setImgInput(v);
@@ -85,12 +114,10 @@ const Home = (v) => {
     const btnModalShow = () => {
         setShow(false);
     }
-    console.log(v.value.last_action);
-    console.log(user.picture);
 
     return (
         <div className={'block_all_home'}>
-            {/* modal */}
+            {/* modal1 */}
             <Modal show={show} >
                 <div className={''}>
                     <Modal.Header className={'modalHead modalBlock'}>
@@ -128,7 +155,22 @@ const Home = (v) => {
                 </div>
             </Modal>
 
-            {/*  */}
+            {/* modal2 */}
+
+            <Modal show={show2} onHide={handleClose2}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Modal heading</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose2}>
+                        Close
+                    </Button>
+                    <Button variant="primary" onClick={handleClose2}>
+                        Save Changes
+                    </Button>
+                </Modal.Footer>
+            </Modal>
 
             {
                 <div className={'block_left_home'}>
@@ -156,26 +198,36 @@ const Home = (v) => {
             }
             <div className={'block_rigth_home  d-flex flex-column'}>
                 <div className={'w-100 heder_home'}>
-                    <h4>IT в картинках</h4>
+                    <h4 className={'title_chat'} onClick={handleShow2}>IT в картинках</h4>
                 </div>
                 <div className={'block_chat flex-grow-1'}>
-                    <div className={'text_chat  d-flex flex-column justify-content-end'}>
+                    <div className={'text_chat  d-flex flex-column '}>
+                        {dataMessage.map((v, i) => {
+                            return (
+                                v.user_id === user.id ? (
+                                    <div className={"d-block align-self-end m-2"}>
+                                        <span className={'span_chat '}>
+                                            {v.text}
+                                        </span>
+                                    </div>
+                                ) :
+                                    <div className={""}>
+                                        <div className={'profil_enimi d-inline-block'} style={{ backgroundImage: `url(https://api.chat.besoft.kg/${v.user.picture.path.original})` }}>
+
+                                        </div>
+                                        <span className={'d-inline-block span_chat span_chat_enimi'}>
+                                            {v.text}
+                                        </span>
+                                    </div>
+                            )
+
+                        })}
                         <div className={""}>
                             <div className={'profil_enimi d-inline-block'} style={{ backgroundImage: "url(https://unitedkingdom-grlk5lagedl.stackpathdns.com/production/uk/images/1611143385752165-Billie-Eilish-Book-New-Music-1.jpg?w=1920&h=800&fit=fill&crop=faces&auto=%5B%22format%22%2C%20%22compress%22%5D&cs=srgb)" }}>
 
                             </div>
-                            <span className={'span_chat span_chat_enimi'}>
-                                s
-                            </span>
-                        </div>
-                        <div className={"d-block align-self-end m-2"}>
-                            <span className={'span_chat '}>
-                                {inputChat_text}
-                            </span>
-                        </div>
-                        <div className={"d-block align-self-end m-2"}>
-                            <span className={'span_chat '}>
-                                {inputChat_text}
+                            <span className={'d-inline-block span_chat span_chat_enimi'}>
+                                у меня тоже отлично!
                             </span>
                         </div>
 
